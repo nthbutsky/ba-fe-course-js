@@ -1,3 +1,5 @@
+import './styles/styles.scss';
+
 // TASK 1
 
 const userAge = prompt(
