@@ -1,1 +1,53 @@
 @import '~normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  background-color: hsl(154, 4%, 32%);
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+  padding: 10px;
+  cursor: default;
+
+  &:hover .header__title {
+    transition: all 0.2s ease-in-out;
+    color: hsl(9, 100%, 67%);
+  }
+}
+
+.header {
+  &__logo {
+    height: 100px;
+    margin: 20px;
+  }
+}
+
+.main {
+  &__l24-container {
+    &:hover .main__l24-title {
+      transition: all 0.2s ease-in-out;
+      color: hsl(44, 100%, 69%);
+    }
+  }
+
+  &__tsk-btn {
+    background-color: hsl(0, 0%, 100%);
+    border: none;
+    border-radius: 30px;
+    height: 40px;
+    width: 100px;
+    margin: 5px;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: hsl(156, 58%, 77%);
+      cursor: pointer;
+      transform: scale(0.9);
+    }
+  }
+}
