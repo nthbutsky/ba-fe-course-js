@@ -50,4 +50,11 @@ body {
       transform: scale(0.9);
     }
   }
+
+  &__l25-container {
+    &:hover .main__l25-title {
+      transition: all 0.2s ease-in-out;
+      color: hsl(44, 100%, 69%);
+    }
+  }
 }
