@@ -28,13 +28,6 @@ body {
 }
 
 .main {
-  &__l24-container {
-    &:hover .main__l24-title {
-      transition: all 0.2s ease-in-out;
-      color: hsl(44, 100%, 69%);
-    }
-  }
-
   &__tsk-btn {
     background-color: hsl(0, 0%, 100%);
     border: none;
@@ -51,8 +44,22 @@ body {
     }
   }
 
+  &__l24-container {
+    &:hover .main__l24-title {
+      transition: all 0.2s ease-in-out;
+      color: hsl(44, 100%, 69%);
+    }
+  }
+
   &__l25-container {
     &:hover .main__l25-title {
+      transition: all 0.2s ease-in-out;
+      color: hsl(44, 100%, 69%);
+    }
+  }
+
+  &__l26-container {
+    &:hover .main__l26-title {
       transition: all 0.2s ease-in-out;
       color: hsl(44, 100%, 69%);
     }
