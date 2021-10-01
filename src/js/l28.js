@@ -389,6 +389,7 @@ function runL28Tsk4() {
         );
       }
     });
+    alert('Open Console to see the output');
     console.log('--- --- --- --- ---');
   }
 

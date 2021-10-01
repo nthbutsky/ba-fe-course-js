@@ -1421,6 +1421,7 @@ function runL28Tsk4() {
         console.log("".concat(e.name.toUpperCase(), " classroom for ").concat(e.dept, " department (max ").concat(e.seats, " seats)"));
       }
     });
+    alert('Open Console to see the output');
     console.log('--- --- --- --- ---');
   }
 
