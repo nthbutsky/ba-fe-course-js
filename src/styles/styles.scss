@@ -85,4 +85,11 @@ body {
       color: hsl(44, 100%, 69%);
     }
   }
+
+  &__l30-container {
+    &:hover .main__l30-title {
+      transition: all 0.2s ease-in-out;
+      color: hsl(44, 100%, 69%);
+    }
+  }
 }
