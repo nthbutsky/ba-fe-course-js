@@ -1,13 +1,11 @@
-import { resolve, join } from 'path';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { CleanWebpackPlugin } from 'clean-webpack-plugin';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
-import MiniCssExtractPlugin, {
-  loader as _loader,
-} from 'mini-css-extract-plugin';
-import TerserWebpackPlugin from 'terser-webpack-plugin';
-import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserWebpackPlugin = require('terser-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
@@ -30,7 +28,7 @@ const filename = ext => (isDev ? `[name].${ext}` : `[name].[hash].${ext}`);
 const cssLoaders = extra => {
   const loaders = [
     {
-      loader: _loader,
+      loader: MiniCssExtractPlugin.loader,
     },
     'css-loader',
   ];
@@ -52,8 +50,8 @@ const plugins = () => {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: resolve(__dirname, 'src/favicon.ico'),
-          to: resolve(__dirname, 'docs'),
+          from: path.resolve(__dirname, 'src/favicon.ico'),
+          to: path.resolve(__dirname, 'docs'),
         },
       ],
     }),
@@ -67,62 +65,64 @@ const plugins = () => {
   return base;
 };
 
-export const context = resolve(__dirname, 'src');
-export const entry = {
-  main: ['@babel/polyfill', './main.js'],
-};
-export const output = {
-  filename: filename('js'),
-  path: resolve(__dirname, 'docs'),
-};
-export const optimization = optimization();
-export const devServer = {
-  static: {
-    directory: join(__dirname, 'docs'),
+module.exports = {
+  context: path.resolve(__dirname, 'src'),
+  entry: {
+    main: ['@babel/polyfill', './main.js'],
   },
-  compress: true,
-  port: 9000,
-  liveReload: true,
-  hot: false,
-};
-export const devtool = isDev ? 'source-map' : false;
-export const plugins = plugins();
-export const module = {
-  rules: [
-    {
-      test: /\.css$/i,
-      use: cssLoaders(),
+  output: {
+    filename: filename('js'),
+    path: path.resolve(__dirname, 'docs'),
+  },
+  optimization: optimization(),
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'docs'),
     },
-    {
-      test: /\.s[ac]ss$/i,
-      use: cssLoaders('sass-loader'),
-    },
-    {
-      test: /\.(png|jpe?g|svg|gif)$/i,
-      use: [
-        {
-          loader: 'file-loader',
-        },
-      ],
-    },
-    {
-      test: /\.(woff|woff2|eot|ttf|otf)$/,
-      use: [
-        {
-          loader: 'file-loader',
-        },
-      ],
-    },
-    {
-      test: /\.m?js$/,
-      exclude: /node_modules/,
-      use: {
-        loader: 'babel-loader',
-        options: {
-          presets: ['@babel/preset-env'],
-          plugins: ['@babel/plugin-proposal-class-properties'],
+    compress: true,
+    port: 9000,
+    liveReload: true,
+    hot: false,
+  },
+  devtool: isDev ? 'source-map' : false,
+  plugins: plugins(),
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: cssLoaders(),
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: cssLoaders('sass-loader'),
+      },
+      {
+        test: /\.(png|jpe?g|svg|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
+      {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+            plugins: ['@babel/plugin-proposal-class-properties'],
+          },
         },
       },
-    },
-  ],
+    ],
+  },
 };
