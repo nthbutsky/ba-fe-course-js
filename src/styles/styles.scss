@@ -18,6 +18,11 @@ body {
     transition: all 0.2s ease-in-out;
     color: hsl(9, 100%, 67%);
   }
+
+  &:hover .main__title {
+    transition: all 0.2s ease-in-out;
+    color: hsl(44, 100%, 69%);
+  }
 }
 
 .header {
@@ -41,55 +46,6 @@ body {
       background-color: hsl(156, 58%, 77%);
       cursor: pointer;
       transform: scale(0.9);
-    }
-  }
-
-  &__l24-container {
-    &:hover .main__l24-title {
-      transition: all 0.2s ease-in-out;
-      color: hsl(44, 100%, 69%);
-    }
-  }
-
-  &__l25-container {
-    &:hover .main__l25-title {
-      transition: all 0.2s ease-in-out;
-      color: hsl(44, 100%, 69%);
-    }
-  }
-
-  &__l26-container {
-    &:hover .main__l26-title {
-      transition: all 0.2s ease-in-out;
-      color: hsl(44, 100%, 69%);
-    }
-  }
-
-  &__l27-container {
-    &:hover .main__l27-title {
-      transition: all 0.2s ease-in-out;
-      color: hsl(44, 100%, 69%);
-    }
-  }
-
-  &__l28-container {
-    &:hover .main__l28-title {
-      transition: all 0.2s ease-in-out;
-      color: hsl(44, 100%, 69%);
-    }
-  }
-
-  &__l29-container {
-    &:hover .main__l29-title {
-      transition: all 0.2s ease-in-out;
-      color: hsl(44, 100%, 69%);
-    }
-  }
-
-  &__l30-container {
-    &:hover .main__l30-title {
-      transition: all 0.2s ease-in-out;
-      color: hsl(44, 100%, 69%);
     }
   }
 }
