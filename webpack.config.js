@@ -69,6 +69,7 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: {
     main: ['@babel/polyfill', './main.js'],
+    jquery: ['./jquery.js'],
   },
   output: {
     filename: filename('js'),
