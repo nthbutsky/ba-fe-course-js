@@ -3,9 +3,9 @@
 
 const tsk1Btn = document.querySelector('#l31-tsk1-btn');
 
-tsk1Btn.addEventListener('click', runl30Tsk1, { once: true });
+tsk1Btn.addEventListener('click', runl31Tsk1, { once: true });
 
-function runl30Tsk1() {
+function runl31Tsk1() {
   const container = document.querySelector('.main__l31-container');
   const div = document.createElement('div');
   const text = document.createTextNode(
@@ -51,9 +51,9 @@ function runl30Tsk1() {
 
 const tsk2Btn = document.querySelector('#l31-tsk2-btn');
 
-tsk2Btn.addEventListener('click', runl30Tsk2, { once: true });
+tsk2Btn.addEventListener('click', runl31Tsk2, { once: true });
 
-function runl30Tsk2() {
+function runl31Tsk2() {
   const container = document.querySelector('.main__l31-container');
 
   const tableDiv = document.createElement('div');
@@ -162,9 +162,9 @@ function runl30Tsk2() {
 
 const tsk3Btn = document.querySelector('#l31-tsk3-btn');
 
-tsk3Btn.addEventListener('click', runl30Tsk3, { once: true });
+tsk3Btn.addEventListener('click', runl31Tsk3, { once: true });
 
-function runl30Tsk3() {
+function runl31Tsk3() {
   const container = document.querySelector('.main__l31-container');
   const div = document.createElement('div');
   const resizer = document.createElement('div');
