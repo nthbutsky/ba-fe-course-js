@@ -45,6 +45,7 @@ const plugins = () => {
       minify: {
         collapseWhitespace: isProd,
       },
+      filename: 'index.html',
     }),
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
@@ -69,7 +70,6 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: {
     main: ['@babel/polyfill', './main.js'],
-    jquery: ['./jquery.js'],
   },
   output: {
     filename: filename('js'),
@@ -102,6 +102,10 @@ module.exports = {
         use: [
           {
             loader: 'file-loader',
+            options: {
+              outputPath: 'img',
+              name: '[name].[ext]',
+            },
           },
         ],
       },
