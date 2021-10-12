@@ -25,6 +25,11 @@ body {
   }
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .header {
   &__logo {
     height: 100px;
@@ -49,6 +54,8 @@ body {
     }
   }
 }
+
+/* LESSON 31 TASK 2 */
 
 .table_sort th {
   cursor: pointer;
@@ -78,6 +85,8 @@ th.sorted[data-order='-1']::after {
 th.sorted[data-order='1']::after {
   content: '▲';
 }
+
+/* LESSON 31 TASK 3 */
 
 .content {
   position: relative;

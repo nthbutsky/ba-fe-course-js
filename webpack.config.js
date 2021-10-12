@@ -45,6 +45,7 @@ const plugins = () => {
       minify: {
         collapseWhitespace: isProd,
       },
+      filename: 'index.html',
     }),
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
@@ -101,6 +102,10 @@ module.exports = {
         use: [
           {
             loader: 'file-loader',
+            options: {
+              outputPath: 'img',
+              name: '[name].[ext]',
+            },
           },
         ],
       },
